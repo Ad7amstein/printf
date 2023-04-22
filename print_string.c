@@ -3,7 +3,7 @@
  * print_string - function to print string
  *
  * @x: char to be printed
- * Return: int
+ * Return: int - length of the string
  */
 int print_string(va_list x)
 {
@@ -14,6 +14,7 @@ int print_string(va_list x)
 	s = va_arg(x, char *);
 	if (s == NULL)
 		s = "(null)";
+
 	while (s[i])
 	{
 		_putchar(s[i]);
