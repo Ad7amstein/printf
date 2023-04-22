@@ -11,9 +11,13 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i, count;
-	char *s;
+	int i, count, j;
 
+	convert_specifier matches[] = {
+	    {'c', print_char},
+	    {'s', print_string},
+	    {'%', print_percent_sign},
+	    {'n', NULL}};
 	va_start(args, format);
 	i = 0;
 	count = 0;
@@ -22,23 +26,12 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			switch (format[i])
+			j = 0;
+			while (matches[j].c != 'n' && matches[j].f != NULL)
 			{
-			case 'c':
-				_putchar((char)va_arg(args, int));
-				count++;
-				break;
-			case 's':
-				s = va_arg(args, char *);
-				if (s == NULL)
-					s = "";
-				count += _puts(s);
-				break;
-			case '%':
-				_putchar('%');
-				count++;
-			default:
-				break;
+				if (matches[j].c == format[i])
+					count += matches[j].f(args);
+				j++;
 			}
 		}
 		else
