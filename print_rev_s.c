@@ -19,13 +19,8 @@ int print_rev_s(va_list arg)
 		i++;
 
 	len = i;
-	i--;
-	while (i)
-	{
+	for (i = i - 1; i >= 0; i--)
 		_putchar(s[i]);
-		i--;
-	}
-	_putchar(s[i]);
 
 	return (len);
 }
