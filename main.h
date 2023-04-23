@@ -31,4 +31,6 @@ int print_rev_s(va_list arg);
 int print_Srot13(va_list str);
 int _printf(const char *format, ...);
 
+int get_print_fun(char c, va_list args);
+
 #endif /* MAIN_H */
