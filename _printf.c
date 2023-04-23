@@ -14,10 +14,10 @@ int _printf(const char *format, ...)
 	    {'c', print_char},
 	    {'s', print_string},
 	    {'%', print_percent_sign},
-		{'b', print_bin},
+	    {'b', print_bin},
 	    {'n', NULL}};
 	va_list args;
-	int i, count, j;
+	int i, count, j, ok;
 
 	i = 0;
 	count = 0;
@@ -32,11 +32,20 @@ int _printf(const char *format, ...)
 			if (format[i] == '\0')
 				break;
 			j = 0;
+			ok = 0;
 			while (matches[j].c != 'n' && matches[j].f != NULL)
 			{
 				if (matches[j].c == format[i])
+				{
+					ok = 1;
 					count += matches[j].f(args);
+				}
 				j++;
+			}
+			if (!ok)
+			{
+				_putchar('%');
+				i--;
 			}
 		}
 		else
