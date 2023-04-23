@@ -5,6 +5,7 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdlib.h>
+
 /**
  * struct format - match and convert the specifiers for printf
  *
@@ -16,6 +17,7 @@ typedef struct format
 	char c;
 	int (*f)();
 } convert_specifier;
+
 int _putchar(char c);
 int _puts(char *str);
 int print_char(va_list x);
