@@ -11,9 +11,9 @@
 int _printf(const char *format, ...)
 {
 	convert_specifier matches[] = {
-	    {'c', print_char},
-	    {'s', print_string},
-	    {'%', print_percent_sign},
+	    {'c', print_char}, {'s', print_string},
+	    {'r', print_rev_s}, {'b', print_bin},
+	    {'R', print_Srot13}, {'%', print_percent_sign},
 	    {'n', NULL}};
 	va_list args;
 	int i, count, j;
@@ -29,6 +29,8 @@ int _printf(const char *format, ...)
 		{
 			i++;
 			j = 0;
+			if (format[i] == '\0')
+				break;
 			while (matches[j].c != 'n' && matches[j].f != NULL)
 			{
 				if (matches[j].c == format[i])
