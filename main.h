@@ -21,6 +21,7 @@ int _puts(char *str);
 int print_char(va_list x);
 int print_string(va_list x);
 int print_percent_sign(void);
+int print_bin(va_list n);
 int _printf(const char *format, ...);
 
 #endif /* MAIN_H */
