@@ -6,6 +6,9 @@
 #include <unistd.h>
 #include <stdlib.h>
 
+#define OUT_BUF_SIZE 1024
+#define BUF_FLUSH -1
+
 /**
  * struct format - match and convert the specifiers for printf
  *
