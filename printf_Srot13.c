@@ -2,7 +2,7 @@
 /**
  * print_Srot13 - print string in rot13 formate
  *
- * @str: string to be printed
+ * @arg: string to be printed
  * Return: int - number of characters printed
  */
 int print_Srot13(va_list arg)
