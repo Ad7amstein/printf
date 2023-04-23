@@ -16,10 +16,7 @@ int print_string(va_list x)
 		s = "(null)";
 
 	while (s[i])
-	{
-		_putchar(s[i]);
-		i++;
-	}
+		_putchar(s[i++]);
 
 	return (i);
 }
