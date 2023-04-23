@@ -10,13 +10,8 @@
  */
 int _printf(const char *format, ...)
 {
-	convert_specifier matches[] = {
-	    {'c', print_char}, {'s', print_string},
-	    {'r', print_rev_s}, {'b', print_bin},
-	    {'R', print_Srot13}, {'%', print_percent_sign},
-	    {'n', NULL}};
 	va_list args;
-	int i, count, j;
+	int i, count, ok;
 
 	i = 0;
 	count = 0;
@@ -29,21 +24,17 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			i++;
-			j = 0;
-			if (format[i] == '\0')
-				break;
-			while (matches[j].c != 'n' && matches[j].f != NULL)
+			ok = get_print_fun(format[i + 1], args);
+			if (ok)
 			{
-				if (matches[j].c == format[i])
-					count += matches[j].f(args);
-				j++;
+				count += ok;
+				i++;
 			}
+			else
+				count += _putchar(format[i]);
 		}
 		else
-		{
 			count += _putchar(format[i]);
-		}
 		i++;
 	}
 	va_end(args);
