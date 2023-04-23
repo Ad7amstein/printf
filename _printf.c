@@ -28,6 +28,8 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
+			if (format[i] == '\0')
+				break;
 			j = 0;
 			while (matches[j].c != 'n' && matches[j].f != NULL)
 			{
