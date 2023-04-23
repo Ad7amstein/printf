@@ -1,5 +1,11 @@
 #include "main.h"
-
+/**
+ * get_print_fun - specify the print function
+ *
+ * @c: specifier
+ * @args: argumetn to be printed
+ * Return: int - number of characters printed
+ */
 int get_print_fun(char c, va_list args)
 {
 	convert_specifier matches[] = {
