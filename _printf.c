@@ -15,6 +15,7 @@ int _printf(const char *format, ...)
 	    {'s', print_string},
 	    {'%', print_percent_sign},
 	    {'b', print_bin},
+	    {'r', print_rev_s},
 	    {'n', NULL}};
 	va_list args;
 	int i, count, j;
