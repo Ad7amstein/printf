@@ -17,6 +17,6 @@ int print_bin(va_list n)
 	i = 0;
 	while (str[i])
 		_putchar(str[i++]);
-	
+
 	return (i);
 }
