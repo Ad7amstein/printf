@@ -14,6 +14,7 @@ int print_printable_letters(va_list arg)
 	if (s == NULL)
 		s = "(null)";
 	i = 0;
+	len = 0;
 	while (s[i])
 	{
 		if ((s[i] > 0 && s[i] < 32) || s[i] >= 127)
