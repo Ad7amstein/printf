@@ -29,6 +29,21 @@ int print_percent_sign(void);
 int print_bin(va_list n);
 int print_rev_s(va_list arg);
 int print_Srot13(va_list str);
+char *convert(unsigned int num, int base);
+void rev_string(char *s);
+int print_oct(va_list arg);
+int print_hex(va_list arg);
+int print_HEX(va_list arg);
+int _isalpha(int c);
+char _to_upper(char c);
+char _to_lower(char c);
+int print_ui(va_list arg);
+int print_2digits_HEX(unsigned int arg);
+int print_printable_letters(va_list arg);
+int _strlen(char *s);
+/* int print_int(va_list arg);
+int print_address(va_list arg);
+*/
 int _printf(const char *format, ...);
 
 int get_print_fun(char c, va_list args);
