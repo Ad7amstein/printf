@@ -11,38 +11,15 @@ int print_bin(va_list n)
 	char *str;
 
 	num = va_arg(n, unsigned int);
-	if (num == 0)
-	{
-		_putchar('0');
-		return (1);
-	}
 
-	str = malloc(sizeof(char) * 1);
-	if (str == NULL)
-		exit(1);
+	str = convert(num, 2);
 
 	i = 0;
-	while (num)
+	while (str[i])
 	{
-		str[i] = (num % 2) + '0';
-		num /= 2;
-		i++;
-		str = realloc(str, sizeof(char) * (i + 1));
-		if (str == NULL)
-		{
-			free(str);
-			exit(1);
-		}
+		_putchar(str[i++]);
+		len++;
 	}
-
-	len = i;
-	i--;
-	while (i)
-	{
-		_putchar(str[i]);
-		i--;
-	}
-	_putchar(str[i]);
 
 	free(str);
 	return (len);
