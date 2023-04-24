@@ -7,15 +7,16 @@
  */
 int print_bin(va_list n)
 {
-	unsigned int num, len;
+	unsigned int num, i;
 	char *str;
 
 	num = va_arg(n, unsigned int);
 
 	str = convert(num, 2);
 
-	len = print_rev_str(str);
-
-	free(str);
-	return (len);
+	i = 0;
+	while (str[i])
+		_putchar(str[i++]);
+	
+	return (i);
 }

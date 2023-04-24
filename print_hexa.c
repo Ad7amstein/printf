@@ -7,7 +7,7 @@
  */
 int print_hex(va_list n)
 {
-	unsigned int num, i, len;
+	unsigned int num, i;
 	char *str;
 
 	num = va_arg(n, unsigned int);
@@ -20,11 +20,10 @@ int print_hex(va_list n)
 		if (_isalpha(str[i]))
 			str[i] = _to_lower(str[i]);
 		_putchar(str[i++]);
-		len++;
 	}
 
 	free(str);
-	return (len);
+	return (i);
 }
 
 /**
@@ -35,7 +34,7 @@ int print_hex(va_list n)
  */
 int print_HEX(va_list n)
 {
-	unsigned int num, i, len;
+	unsigned int num, i;
 	char *str;
 
 	num = va_arg(n, unsigned int);
@@ -48,11 +47,10 @@ int print_HEX(va_list n)
 		if (_isalpha(str[i]))
 			str[i] = _to_upper(str[i]);
 		_putchar(str[i++]);
-		len++;
 	}
 
 	free(str);
-	return (len);
+	return (i);
 }
 
 /**
@@ -63,7 +61,7 @@ int print_HEX(va_list n)
  */
 int print_2digits_HEX(int num)
 {
-	unsigned int i, len;
+	unsigned int i;
 	char *str;
 
 	str = convert(num, 16);
@@ -73,9 +71,9 @@ int print_2digits_HEX(int num)
 	{
 		if (_isalpha(str[i]))
 			str[i] = _to_upper(str[i]);
+		i++;
 	}
 
-	len = print_rev_str(str);
 	free(str);
-	return (len);
+	return (i);
 }

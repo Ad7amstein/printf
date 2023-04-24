@@ -7,15 +7,18 @@
  */
 int print_oct(va_list n)
 {
-	unsigned int num, len;
+	unsigned int num, i;
 	char *str;
 
 	num = va_arg(n, unsigned int);
 
 	str = convert(num, 8);
 
-	len = print_rev_str(str);
+	i = 0;
+	while (str[i])
+		_putchar(str[i++]);
+	
 
 	free(str);
-	return (len);
+	return (i);
 }

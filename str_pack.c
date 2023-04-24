@@ -42,27 +42,3 @@ int _strlen(char *s)
 	}
 	return (len);
 }
-
-/**
- * print_rev_str - print string in reverse order
- *
- * @s: string to be printed
- * Return: int - number of character printed
- */
-int print_rev_str(char *s)
-{
-	int i, len;
-
-	i = 0;
-	if (s == NULL)
-		s = "(null)";
-
-	while (s[i])
-		i++;
-
-	len = i;
-	for (i = i - 1; i >= 0; i--)
-		_putchar(s[i]);
-
-	return (len);
-}
