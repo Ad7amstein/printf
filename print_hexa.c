@@ -61,7 +61,7 @@ int print_HEX(va_list n)
  * @num: number to be converted and printed
  * Return: int - number of characters printed
  */
-int print_2digits_HEX(unsigned int num)
+int print_2digits_HEX(int num)
 {
 	unsigned int i, len;
 	char *str;

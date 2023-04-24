@@ -38,7 +38,7 @@ int _isalpha(int c);
 char _to_upper(char c);
 char _to_lower(char c);
 int print_ui(va_list arg);
-int print_2digits_HEX(unsigned int arg);
+int print_2digits_HEX(int arg);
 int print_printable_letters(va_list arg);
 int _strlen(char *s);
 /* int print_int(va_list arg);*/

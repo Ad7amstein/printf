@@ -8,7 +8,7 @@
 int print_printable_letters(va_list arg)
 {
 	char *s;
-	unsigned int i, num, len;
+	int i, num, len;
 
 	s = va_arg(arg, char *);
 	if (s == NULL)
@@ -21,7 +21,7 @@ int print_printable_letters(va_list arg)
 		{
 			_putchar('\\');
 			_putchar('x');
-			num = (unsigned int)s[i];
+			num = s[i];
 			if (num < 16)
 				_putchar('0');
 			print_2digits_HEX(num);
@@ -29,8 +29,7 @@ int print_printable_letters(va_list arg)
 		}
 		else
 		{
-			len++;
-			_putchar(s[i]);
+			len += _putchar(s[i]);
 		}
 
 		i++;
