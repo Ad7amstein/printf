@@ -12,7 +12,7 @@ int print_bin(va_list n)
 
 	num = va_arg(n, unsigned int);
 
-	str = convert(num, (unsigned int)2U);
+	str = convert(num, 2U);
 
 	i = 0;
 	while (str[i])
