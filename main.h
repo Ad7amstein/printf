@@ -30,7 +30,7 @@ int print_bin(va_list n);
 int print_rev_s(va_list arg);
 int print_Srot13(va_list str);
 char *convert(unsigned int num, unsigned int base);
-void rev_string(char *s);
+int print_rev_str(char *s);
 int print_oct(va_list arg);
 int print_hex(va_list arg);
 int print_HEX(va_list arg);
