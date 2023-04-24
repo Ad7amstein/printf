@@ -6,7 +6,7 @@
  * @base: base to convert to
  * Return: char* - number after convert
  */
-char *convert(unsigned int num, int base)
+char *convert(unsigned int num, unsigned int base)
 {
 	unsigned int i, index;
 	char *str;
