@@ -69,12 +69,12 @@ int print_2digits_HEX(int num)
 	str = convert(num, 16);
 
 	i = 0;
+	len = 0;
 	while (str[i])
 	{
 		if (_isalpha(str[i]))
 			str[i] = _to_upper(str[i]);
-		_putchar(str[i++]);
-		len++;
+		len += _putchar(str[i++]);
 	}
 
 	free(str);

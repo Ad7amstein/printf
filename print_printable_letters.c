@@ -19,13 +19,12 @@ int print_printable_letters(va_list arg)
 	{
 		if ((s[i] > 0 && s[i] < 32) || s[i] >= 127)
 		{
-			_putchar('\\');
-			_putchar('x');
+			len += _putchar('\\');
+			len += _putchar('x');
 			num = s[i];
 			if (num < 16)
-				_putchar('0');
-			print_2digits_HEX(num);
-			len += 4;
+				len += _putchar('0');
+			len += print_2digits_HEX(num);
 		}
 		else
 		{
