@@ -58,7 +58,7 @@ int print_HEX(va_list n)
 /**
  * print_2digits_HEX - print unsigned int argument converted to hexadecimal
  *
- * @n: number to be converted and printed
+ * @num: number to be converted and printed
  * Return: int - number of characters printed
  */
 int print_2digits_HEX(unsigned int num)
@@ -80,4 +80,3 @@ int print_2digits_HEX(unsigned int num)
 	free(str);
 	return (len);
 }
-

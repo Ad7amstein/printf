@@ -16,7 +16,7 @@ int print_printable_letters(va_list arg)
 	i = 0;
 	while (s[i])
 	{
-		if ((0 < s[i] && s[i] < 32) || s[i] >= 127)
+		if ((s[i] > 0 && s[i] < 32) || s[i] >= 127)
 		{
 			_putchar('\\');
 			_putchar('x');

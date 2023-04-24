@@ -33,6 +33,7 @@ int _putchar(char c)
 int _strlen(char *s)
 {
 	int len;
+
 	len = 0;
 	while (*s != '\0')
 	{
@@ -51,6 +52,7 @@ void rev_string(char *s)
 {
 	int i, j;
 	char c;
+
 	i = 0;
 	while (s[i])
 	{
