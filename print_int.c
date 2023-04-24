@@ -7,19 +7,14 @@
  */
 int print_ui(va_list n)
 {
-	unsigned int num, i, len;
+	unsigned int num, len;
 	char *str;
 
 	num = va_arg(n, unsigned int);
 
 	str = convert(num, 10);
 
-	i = 0;
-	while (str[i])
-	{
-		_putchar(str[i++]);
-		len++;
-	}
+	len = print_rev_str(str);
 
 	free(str);
 	return (len);

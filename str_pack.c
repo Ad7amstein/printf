@@ -44,24 +44,25 @@ int _strlen(char *s)
 }
 
 /**
- * rev_string - function that reverses a string.
+ * print_rev_str - print string in reverse order
  *
- * @s: string to be reversed
+ * @s: string to be printed
+ * Return: int - number of character printed
  */
-void rev_string(char *s)
+int print_rev_str(char *s)
 {
-	int i, j;
-	char c;
+	int i, len;
 
 	i = 0;
+	if (s == NULL)
+		s = "(null)";
+
 	while (s[i])
-	{
 		i++;
-	}
-	for (j = 0; j < (i / 2); j++)
-	{
-		c = s[j];
-		s[j] = s[i - j - 1];
-		s[i - j - 1] = c;
-	}
+
+	len = i;
+	for (i = i - 1; i >= 0; i--)
+		_putchar(s[i]);
+
+	return (len);
 }
