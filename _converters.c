@@ -50,31 +50,21 @@ char *convert(unsigned int num, unsigned int base)
 
 char *signed_converter(int num, int base)
 {
-	int i = 0, j, mem_size = 1;
+	unsigned int i = 0, j, mem_size = 2;
 	char *str, *str2;
 	char base_alpha[] = {'A', 'B', 'C', 'D', 'E', 'F'};
 
 	str = malloc(sizeof(char) * mem_size++);
 	if (str == NULL)
 		exit(1);
+	str[i++] = '-';
 
-	if (num < 0)
-	{
-		str[i++] = '-';
-		num *= -1;
-		str = realloc(str, sizeof(char) * mem_size++);
-		if (str == NULL)
-		{
-			free(str);
-			exit(1);
-		}
-	}
 	while (num)
 	{
-		if (num % base >= 10)
-			str[i++] = base_alpha[(num % base) - 10];
+		if (num % base <= -10)
+			str[i++] = base_alpha[(num % base) % -10];
 		else
-			str[i++] = (num % base) + '0';
+			str[i++] = ((num % base) * -1) + '0';
 		num /= base;
 		str = realloc(str, sizeof(char) * mem_size++);
 		if (str == NULL)
@@ -87,20 +77,10 @@ char *signed_converter(int num, int base)
 	str2 = malloc(sizeof(char) * i + 1);
 
 	i--;
-	j = 0;
-	if (str[0] == '-')
-	{
-		j++;
-		while (i)
-			str2[j++] = str[i--];
-		str2[0] = '-';
-	}
-	else
-	{
-		while (i)
-			str2[j++] = str[i--];
-		str2[j++] = str[i];
-	}
+	j = 1;
+	while (i)
+		str2[j++] = str[i--];
+	str2[0] = '-';
 	str2[j] = '\0';
 	free(str);
 	return (str2);

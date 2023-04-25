@@ -34,10 +34,10 @@ int print_int(va_list n)
 	char *str;
 
 	num = va_arg(n, signed int);
-	if(!num)
-		str = "(nil)";
-	else
+	if (num < 0)
 		str = signed_converter(num, 10);
+	else
+		str = convert(num, 10);
 	i = 0;
 
 	while (str[i])

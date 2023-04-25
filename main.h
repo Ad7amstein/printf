@@ -8,7 +8,30 @@
 
 #define OUT_BUF_SIZE 1024
 #define BUF_FLUSH -1
+#define NULL_STRING "(null)"
+#define PARAMETERS {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+#define _LOWER 1
+#define _UNSIGNED 2
 
+typedef struct para
+{
+	unsigned int uns : 1;
+	unsigned int plus_f :1;
+	unsigned int space_f :1;
+	unsigned int hash_f :1;
+	unsigned int zero_f :1;
+	unsigned int minus_f :1;
+	unsigned int width;
+	unsigned int precision;
+	unsigned int h_mod :1;
+	unsigned int l_mod :1;
+} para_t;
+
+typedef struct specifier
+{
+	char *specifier;
+	int (*f)(va_list, para_t *);
+} specifier_t;
 /**
  * struct format - match and convert the specifiers for printf
  *
@@ -23,7 +46,7 @@ typedef struct format
 
 int _putchar(char c);
 int _puts(char *str);
-int print_char(va_list x);
+int print_char(va_list x );
 int print_string(va_list x);
 int print_percent_sign(void);
 int print_bin(va_list n);
