@@ -50,17 +50,13 @@ char *convert(unsigned int num, unsigned int base)
 
 char *signed_converter(int num, int base)
 {
-	int i, j,mem_size;
+	int i = 0, j, mem_size = 1;
 	char *str, *str2;
 	char base_alpha[] = {'A', 'B', 'C', 'D', 'E', 'F'};
 
-	if (num == 0)
-		return ("0");
-	mem_size = 1;
 	str = malloc(sizeof(char) * mem_size++);
 	if (str == NULL)
-		exit (1);
-	i = 0;
+		exit(1);
 
 	if (num < 0)
 	{
@@ -89,7 +85,6 @@ char *signed_converter(int num, int base)
 	}
 	str[i] = '\0';
 	str2 = malloc(sizeof(char) * i + 1);
-	
 
 	i--;
 	j = 0;
@@ -106,7 +101,6 @@ char *signed_converter(int num, int base)
 			str2[j++] = str[i--];
 		str2[j++] = str[i];
 	}
-	
 	str2[j] = '\0';
 	free(str);
 	return (str2);
