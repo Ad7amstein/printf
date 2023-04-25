@@ -7,6 +7,6 @@
  */
 int main(void)
 {
-	_printf("%d", INT_MAX);
+	_printf("%d", -0);
 	return (0);
 }
