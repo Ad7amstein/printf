@@ -8,42 +8,45 @@
  */
 char *convert(unsigned int num, unsigned int base)
 {
-	unsigned int i, index;
-	char *str;
+	unsigned int i, j, mem_size;
+	char *str, *str2;
 	char base16[] = {'A', 'B', 'C', 'D', 'E', 'F'};
 
 	if (num == 0)
-	{
-		str = malloc(sizeof(char) * 2);
-		if (str == NULL)
-			exit(1);
-		str[0] = '0';
-		str[1] = '\0';
-		return (str);
-	}
+		return ("0");
 
-	i = 1;
-	index = 0;
-	str = malloc(sizeof(char) * i++);
+	mem_size = 1;
+	str = malloc(sizeof(char) * mem_size++);
 	if (str == NULL)
 		exit(1);
 
+	i = 0;
 	while (num)
 	{
-		if (num % base < 10)
-			str[index++] = (num % base) + '0';
+		if (num % base >= 10)
+			str[i++] = base16[(num % base) - 10];
 		else
-			str[index++] = base16[(num % base) - 10];
+			str[i++] = (num % base) + '0';
 		num /= base;
-		str = realloc(str, sizeof(char) * (i++));
+		str = realloc(str, sizeof(char) * mem_size++);
 		if (str == NULL)
 		{
 			free(str);
 			exit(1);
 		}
 	}
+	str[i] = '\0';
+	str2 = malloc(sizeof(char) * i + 1);
 
-	str[index] = '\0';
-	rev_string(str);
-	return (str);
+	i--;
+	j = 0;
+	while (i)
+	{
+		str2[j++] = str[i--];
+	}
+	str2[j++] = str[i];
+	str2[j] = '\0';
+
+	free(str);
+	return (str2);
 }
