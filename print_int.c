@@ -18,7 +18,7 @@ int print_ui(va_list n)
 	while (str[i])
 		_putchar(str[i++]);
 
-	free(str);
+	/*free(str);*/
 	return (i);
 }
 

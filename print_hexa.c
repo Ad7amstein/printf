@@ -22,7 +22,7 @@ int print_hex(va_list n)
 		_putchar(str[i++]);
 	}
 
-	free(str);
+	/*free(str);*/
 	return (i);
 }
 
@@ -49,7 +49,7 @@ int print_HEX(va_list n)
 		_putchar(str[i++]);
 	}
 
-	free(str);
+	/*free(str);*/
 	return (i);
 }
 
@@ -74,6 +74,6 @@ int print_2digits_HEX(int num)
 		i++;
 	}
 
-	free(str);
+	/*free(str);*/
 	return (i);
 }
