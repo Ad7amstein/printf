@@ -33,7 +33,7 @@ int print_int(va_list n)
 	int num, i;
 	char *str;
 
-	num = va_arg(n, int);
+	num = va_arg(n, signed int);
 	if(!num)
 		str = "(nil)";
 	else
