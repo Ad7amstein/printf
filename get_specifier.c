@@ -20,8 +20,8 @@ int get_print_fun(char c, va_list args)
 	    {'x', print_hex},
 	    {'X', print_HEX},
 	    {'u', print_ui},
-	    /*{'d', print_int},*/
-	    /*{'i', print_int},*/
+	    {'d', print_int},
+	    {'i', print_int},
 	    /*{'p', print_address},*/
 	    {'\0', NULL}};
 	int i;

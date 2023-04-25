@@ -21,3 +21,24 @@ int print_ui(va_list n)
 	free(str);
 	return (i);
 }
+
+/**
+  * print_int - function to print signed integers
+  * Return: int - number of characters printed
+  * @n: the integer to be printed
+  */
+
+int print_int(va_list n)
+{
+	int num, i;
+	char *str;
+
+	num = va_arg(n, int);
+	str = convert(num, 10);
+	i = 0;
+
+	while (str[i])
+		_putchar(str[i++]);
+	free(str);
+	return (i);
+}
