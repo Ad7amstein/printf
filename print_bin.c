@@ -18,6 +18,5 @@ int print_bin(va_list n)
 	while (str[i])
 		_putchar(str[i++]);
 
-	free(str);
 	return (i);
 }
