@@ -19,14 +19,7 @@ int _putchar(char c)
 	}
 
 	if (c != BUF_FLUSH)
-	{
-		if (curr_buf_size == OUT_BUF_SIZE - 1)
-		{
-			write(1, buffer, curr_buf_size);
-			curr_buf_size = 0;
-		}
 		buffer[curr_buf_size++] = c;
-	}
 
 	return (1);
 }
