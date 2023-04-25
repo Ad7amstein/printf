@@ -36,6 +36,6 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	va_end(args);
-	_putchar(BUF_FLUSH);
+	/*_putchar(BUF_FLUSH);*/
 	return (count);
 }
