@@ -7,6 +7,6 @@
  */
 int main(void)
 {
-	_printf("%s", NULL);
+	_printf("%c", "school");
 	return (0);
 }
