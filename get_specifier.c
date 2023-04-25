@@ -22,7 +22,7 @@ int get_print_fun(char c, va_list args)
 	    {'u', print_ui},
 	    {'d', print_int},
 	    {'i', print_int},
-	    /*{'p', print_address},*/
+	    {'p', print_address},
 	    {'\0', NULL}};
 	int i;
 

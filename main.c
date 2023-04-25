@@ -7,6 +7,8 @@
  */
 int main(void)
 {
-	_printf("%c", "school");
+	void *addr = (void *)0x7ffe637541f0;
+
+	_printf("%p", addr);
 	return (0);
 }

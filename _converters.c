@@ -7,10 +7,10 @@
  * Return: char* - number after convert
  */
 char *convert(unsigned int num, unsigned int base)
-{
-	unsigned int i, j, mem_size;
+{	
+	unsigned long int i, j, mem_size;
 	char *str, *str2;
-	char base16[] = {'A', 'B', 'C', 'D', 'E', 'F'};
+	char base16[] = {'A', 'B', 'C', 'D', 'E', 'F','e'};
 
 	if (num == 0)
 		return ("0");
@@ -90,4 +90,27 @@ char *signed_converter(int num, int base)
 	str2[j] = '\0';
 	free(str);
 	return (str2);
+}
+
+/**
+  * address_converter - a function to return the address as a string
+  * Return: a string with the address
+  *@n: the address to be returnd
+  *@base: the base to convert the address
+  */
+
+char *address_converter(unsigned long int n, int base)
+{
+	char *array = "0123456789abcdef";
+	static char buffer[50];
+	char *ptr;
+
+	ptr = &buffer[49];
+
+	*ptr = '\0';
+	do {
+		*--ptr = array[n % base];
+		n /= base;
+	} while (n != 0);
+	return (ptr);
 }

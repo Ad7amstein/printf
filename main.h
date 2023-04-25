@@ -22,6 +22,7 @@ typedef struct format
 	int (*f)();
 } convert_specifier;
 
+char *address_converter(unsigned long int n, int base);
 int _putchar(char c);
 int _puts(char *str);
 int print_char(va_list x);
@@ -43,7 +44,7 @@ int print_2digits_HEX(int arg);
 int print_printable_letters(va_list arg);
 int _strlen(char *s);
 int print_int(va_list n);
-/*int print_address(va_list arg);*/
+int print_address(va_list arg);
 int _printf(const char *format, ...);
 
 int get_print_fun(char c, va_list args);
