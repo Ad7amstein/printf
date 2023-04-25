@@ -9,17 +9,17 @@
  */
 int _putchar(char c)
 {
-	static int i;
+	static int curr_buf_size;
 	static char buffer[OUT_BUF_SIZE];
 
-	if (c == BUF_FLUSH || i >= OUT_BUF_SIZE)
+	if (c == BUF_FLUSH || curr_buf_size >= OUT_BUF_SIZE)
 	{
-		write(1, buffer, i);
-		i = 0;
+		write(1, buffer, curr_buf_size);
+		curr_buf_size = 0;
 	}
 
 	if (c != BUF_FLUSH)
-		buffer[i++] = c;
+		buffer[curr_buf_size++] = c;
 
 	return (1);
 }
