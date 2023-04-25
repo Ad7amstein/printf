@@ -47,6 +47,12 @@ char *convert(unsigned int num, unsigned int base)
 	free(str);
 	return (str2);
 }
+/**
+  *signed_converter - function to convert to some base with negative sign
+  *Return: a char pointer to the string converted
+  *@num: is the number to convert
+  *@base: the base to convert to
+  */
 
 char *signed_converter(int num, int base)
 {
