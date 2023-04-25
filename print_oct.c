@@ -17,7 +17,6 @@ int print_oct(va_list n)
 	i = 0;
 	while (str[i])
 		_putchar(str[i++]);
-	
 
 	free(str);
 	return (i);

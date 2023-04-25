@@ -11,7 +11,6 @@ char *convert(unsigned int num, unsigned int base)
 	unsigned int i, j, mem_size;
 	char *str, *str2;
 	char base16[] = {'A', 'B', 'C', 'D', 'E', 'F'};
-
 	if (num == 0)
 		return ("0");
 
@@ -41,12 +40,10 @@ char *convert(unsigned int num, unsigned int base)
 	i--;
 	j = 0;
 	while (i)
-	{
 		str2[j++] = str[i--];
-	}
+
 	str2[j++] = str[i];
 	str2[j] = '\0';
-
 	free(str);
 	return (str2);
 }
