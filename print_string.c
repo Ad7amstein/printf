@@ -12,8 +12,9 @@ int print_string(va_list x)
 
 	i = 0;
 	s = va_arg(x, char *);
-	if (s == NULL)
-		s = "(null)";
+
+	if(s == NULL)
+		exit(1);
 
 	while (s[i])
 		_putchar(s[i++]);
