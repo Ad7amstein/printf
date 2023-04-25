@@ -34,7 +34,7 @@ int print_int(va_list n)
 	char *str;
 
 	num = va_arg(n, int);
-	str = convert(num, 10);
+	str = signed_converter(num, 10);
 	i = 0;
 
 	while (str[i])

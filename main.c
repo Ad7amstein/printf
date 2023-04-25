@@ -7,6 +7,6 @@
  */
 int main(void)
 {
-	_printf("%d\n", 15);
+	_printf("%d\n", -20 * -10);
 	return (0);
 }
