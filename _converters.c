@@ -7,10 +7,10 @@
  * Return: char* - number after convert
  */
 char *convert(unsigned int num, unsigned int base)
-{	
+{
 	unsigned long int i, j, mem_size;
 	char *str, *str2;
-	char base16[] = {'A', 'B', 'C', 'D', 'E', 'F','e'};
+	char base16[] = {'A', 'B', 'C', 'D', 'E', 'F'};
 
 	if (num == 0)
 		return ("0");

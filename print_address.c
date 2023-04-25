@@ -1,5 +1,9 @@
 #include "main.h"
-
+/**
+  * print_address - function to print the address of a pointer
+  * Return: number of the chars printed
+  * @arg: pointer the argument we are using
+  */
 int print_address(va_list arg)
 {
 	unsigned long int i = 0, temp;
