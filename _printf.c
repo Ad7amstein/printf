@@ -11,7 +11,8 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	unsigned int i, count, ok;
+	unsigned int i, count;
+	int ok;
 
 	i = 0;
 	count = 0;
@@ -25,13 +26,13 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			ok = get_print_fun(format[i + 1], args);
-			if (ok)
+			if (ok != -1)
 			{
 				count += ok;
 				i++;
 			}
 			else
-			count += _putchar(format[i]);
+				count += _putchar(format[i]);
 		}
 		else
 			count += _putchar(format[i]);

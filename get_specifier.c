@@ -34,5 +34,5 @@ int get_print_fun(char c, va_list args)
 		i++;
 	}
 
-	return (0);
+	return (-1);
 }
