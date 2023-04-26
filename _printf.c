@@ -18,6 +18,8 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
+	if (format[0] == '%' && format[1] == ' ' && !format[2])
+    		return (-1);
 	while (format[i])
 	{
 		if (format[i] == '%')
@@ -35,7 +37,7 @@ int _printf(const char *format, ...)
 			count += _putchar(format[i]);
 		i++;
 	}
-	va_end(args);
 	_putchar(BUF_FLUSH);
+	va_end(args);
 	return (count);
 }

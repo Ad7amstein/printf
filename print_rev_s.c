@@ -12,8 +12,8 @@ int print_rev_s(va_list arg)
 
 	i = 0;
 	s = va_arg(arg, char *);
-	if (s == NULL)
-		s = "(null)";
+	if (s == NULL || s == 0)
+		s = "";
 
 	while (s[i])
 		i++;
