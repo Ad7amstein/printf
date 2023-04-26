@@ -19,19 +19,13 @@ int _printf(const char *format, ...)
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 	if (format[0] == '%' && format[1] == ' ' && !format[2])
-    		return (-1);
+		return (-1);
 	while (format[i])
 	{
 		if (format[i] == '%')
 		{
-			ok = get_print_fun(format[i + 1], args);
-			if (ok)
-			{
-				count += ok;
-				i++;
-			}
-			else
-				count += _putchar(format[i]);
+			count += get_print_fun(format[i + 1], args);
+			i++;
 		}
 		else
 			count += _putchar(format[i]);
