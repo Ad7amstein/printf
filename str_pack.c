@@ -9,6 +9,7 @@
  */
 int _putchar(char c)
 {
+
 	static int curr_buf_size;
 	static char buffer[OUT_BUF_SIZE];
 
